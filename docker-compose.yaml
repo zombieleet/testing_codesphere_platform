@@ -1,0 +1,31 @@
+
+services:
+  todo_app:
+    build: .
+    environment:
+      MONGO_URI: "mongodb://host.docker.internal/"
+    ports:
+      - 1337:1337
+    volumes:
+      - ./:/app
+    working_dir: /app
+    depends_on:
+      - db
+    networks:
+      - todo_network
+
+  db:
+    image: mongo:7.0
+    volumes:
+      - mongo_data_todo_go:/data/db
+    networks:
+      - todo_network
+    ports:
+      - 27017:27017
+
+
+networks:
+  todo_network:
+
+volumes:
+  mongo_data_todo_go:
