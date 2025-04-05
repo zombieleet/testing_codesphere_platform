@@ -32,8 +32,8 @@ jobs:
         with:
             email: ${{ secrets.CODESPHERE_EMAIL }}
             password: ${{ secrets.CODESPHERE_PASSWORD }}
-            team: 'My Team' # Change this to your team
-            plan: 'Boost' # Select the plan for your app (Micro, Boost or Pro)
+            team: 'TestTeam' # Change this to your team
+            plan: 'Micro' # Select the plan for your app (Micro, Boost or Pro)
             onDemand: 'true' # Set this to true for on demand 
             env: |
               MY_ENV=test
